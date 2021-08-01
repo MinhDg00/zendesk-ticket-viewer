@@ -1,6 +1,4 @@
 from ticket_viewer import TicketViewer
-from ticket_retriever import TicketRetriever
-from ticket import Ticket
 import sys 
 
 def main(): 
