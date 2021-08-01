@@ -1,4 +1,4 @@
-from ticket_viewer import TicketViewer
+from models.ticket_viewer import TicketViewer
 import sys 
 
 def main(): 
@@ -19,7 +19,7 @@ def main():
             while page_command.lower() not in ['e', 'exit']:
                 ticket_viewer.display_page_menu()
                 page_command = input() 
-                if page_command.lower() in ['p', 'previous']:
+                if page_command.lower() in ['p', 'prev']:
                     ticket_viewer.view_ticket_list(ticket_viewer.current_page - 1)
                 elif page_command.lower() in ['n', 'next']:
                     ticket_viewer.view_ticket_list(ticket_viewer.current_page + 1)
@@ -37,7 +37,7 @@ def main():
             ticket_viewer.display_id_request()
             ticket_id = input()
             ticket_viewer.view_individual_ticket(ticket_id)
-            ticket_viewer.display_back_to_menu()
+            ticket_viewer.display_back_to_main_menu()
 
         elif command == '3':
             sys.exit(ticket_viewer.display_end_message())

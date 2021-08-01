@@ -1,7 +1,6 @@
-import json 
 import requests 
-from config import * 
-from ticket_retriever import TicketRetriever
+from config.config import *
+from models.ticket_retriever import TicketRetriever
 
 class TicketViewer: 
     
@@ -54,7 +53,7 @@ class TicketViewer:
 
     def display_page_menu(self):
         print("        \nPAGINATION OPTIONS:\n")
-        print("         - Type p/previous to go to previous page:")
+        print("         - Type p/prev to go to previous page:")
         print("         - Type n/next to go to next page: ")
         print(f"         - Type page number (1 to {self.page_count}) to jump to specific ticket page: ")
         print("         - Type m/menu to go back to main view options: ")
@@ -64,7 +63,7 @@ class TicketViewer:
         print("\nInput ticket id: ")
 
     def display_back_to_main_menu(self):
-        print("\nBack to main menu options ... ")
+        print("\nBack to main menu optsions ... ")
         
     def display_end_message(self):
         print("\nProgram exited")

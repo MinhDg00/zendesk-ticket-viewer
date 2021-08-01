@@ -1,6 +1,6 @@
 import requests 
-from ticket import Ticket 
-from config import * 
+from models.ticket import Ticket 
+from config.config import *
 
 class TicketRetriever:
     '''
