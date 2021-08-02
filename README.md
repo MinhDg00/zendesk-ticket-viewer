@@ -16,7 +16,7 @@ git clone https://github.com/MinhDg00/zendesk-ticket-viewer.git
 ```
 __2. Navigate to the folder directory__ 
 ```shell
-cd <zendesk-directory> 
+cd <zendesk-ticket-viewer-directory> 
 ```
 __3. Install prerequisite packages__ 
 ```shell
@@ -29,6 +29,11 @@ __4. Run the application__
 python3 src/main.py 
 ```
 
+## Testing 
+Run the following command to test 
+```shell
+python3 test/test.py
+```
 ## References
 --------------------------
 https://developer.zendesk.com/api-reference/ticketing/tickets/tickets/
