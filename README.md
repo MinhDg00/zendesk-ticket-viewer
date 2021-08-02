@@ -1,15 +1,12 @@
 # Zendesk Ticket Viewer CLI
 
 ## Functionalities
--------------------------
 - Request and display tickets from personal accounts in a lost 
 - Display individual ticket details
 - Able to page through tickets when more than 25 are returned 
 
 
 ## Installation and Guide
---------------------------
-
 __1. Clone this repository__
 ```shell
 git clone https://github.com/MinhDg00/zendesk-ticket-viewer.git
@@ -35,5 +32,4 @@ Run the following command to test
 python3 test/test.py
 ```
 ## References
---------------------------
 https://developer.zendesk.com/api-reference/ticketing/tickets/tickets/
