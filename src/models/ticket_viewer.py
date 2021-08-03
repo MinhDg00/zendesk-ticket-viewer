@@ -24,16 +24,16 @@ class TicketViewer:
                 print(f"Page {page_number}/{self.page_count}")
                 self.current_page = page_number 
             except (requests.exceptions.RequestException, requests.exceptions.HTTPError, requests.exceptions.ConnectionError) as e:
-                print(e)
+                print(e.response.text)
                 return
         else:
-            print( f"\n Invalid Page Number. Please Input Again!! \n Should be between 1 and {self.page_count}")
+            print( f"\n Invalid Page Number or Next/Previous Page does not exist. Please Input Again!!\n")
                     
     def view_individual_ticket(self, id):
         try:
             ticket = self.retriever.retrieve_individual_ticket(id)
         except (requests.exceptions.RequestException, requests.exceptions.HTTPError, requests.exceptions.ConnectionError) as e:
-            print(e)
+            print(e.response.text)
             return
 
         if ticket: print(ticket.get_ticket_detail())
@@ -46,18 +46,18 @@ class TicketViewer:
         print("-----------------------------------------------------------------\n")
 
     def display_main_menu(self):
-        print("       \nMAIN MENU OPTIONS:\n") 
-        print("         - Press 1 to view all tickets")
-        print("         - Press 2 to view details of a ticket")
-        print("         - Press 3 to quit")
+        print("\n~~~MAIN MENU OPTIONS~~~\n") 
+        print("- Press 1 to view all tickets")
+        print("- Press 2 to view details of a ticket")
+        print("- Press 3 to quit\n")
 
     def display_page_menu(self):
-        print("        \nPAGINATION OPTIONS:\n")
-        print("         - Type p/prev to go to previous page:")
-        print("         - Type n/next to go to next page: ")
-        print(f"         - Type page number (1 to {self.page_count}) to jump to specific ticket page: ")
-        print("         - Type m/menu to go back to main view options: ")
-        print("         - Type e/exit to exit the ticket viewer: \n")
+        print("\n~~~PAGINATION OPTIONS~~~\n")
+        print("- Type p/prev to go to previous page")
+        print("- Type n/next to go to next page ")
+        print(f"- Type page number (1 to {self.page_count}) to jump to specific ticket page ")
+        print("- Type m/menu to go back to main view options ")
+        print("- Type e/exit to exit the ticket viewer \n")
 
     def display_id_request(self):
         print("\nInput ticket id: ")
@@ -67,5 +67,7 @@ class TicketViewer:
         
     def display_end_message(self):
         print("\nProgram exited")
-        print("Thank you for using Zendesk Ticket Viewer version zccmdang")
-        
+        print("Thank you for using Zendesk Ticket Viewer version zccmdang \n")
+    
+    def display_invalid_message(self):
+        print("\n ERROR: Invalid Input. Please Input Again.")

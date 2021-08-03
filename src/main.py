@@ -2,7 +2,10 @@ from models.ticket_viewer import TicketViewer
 import sys 
 
 def main(): 
-    
+    '''
+    a controller to execute Ticket Viewer 
+    '''
+
     ticket_viewer = TicketViewer()
     ticket_viewer.display_header()
     command = ""
@@ -31,7 +34,7 @@ def main():
                 elif page_command.lower() in ['e', 'exit']:
                     sys.exit(ticket_viewer.display_end_message()) 
                 else:
-                    print('Invalid Input. Please input again: \n')
+                    ticket_viewer.display_invalid_message()
 
         elif command == '2':
             ticket_viewer.display_id_request()
@@ -43,7 +46,7 @@ def main():
             sys.exit(ticket_viewer.display_end_message())
 
         else:
-            print('Invalid Input. Please input again: \n')  
+            ticket_viewer.display_invalid_message()  
             
 if __name__ == "__main__":
     main() 
